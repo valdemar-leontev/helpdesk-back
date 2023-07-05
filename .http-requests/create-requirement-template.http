@@ -1,0 +1,6 @@
+GET http://localhost:5000/login?email=valdemar.leontev@gmail.com&password=12345
+
+
+###
+PUT http://localhost:5000/requirement-templates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiJ2YWxkZW1hci5sZW9udGV2QGdtYWlsLmNvbSIsInJvbGVJZCI6IjIiLCJuYmYiOjE2NjExODY2NTksImV4cCI6MTY2MTE4NjcxOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.waqC8qADpfb3YBHVhMUOLyjtO6FRONMBE4bAWeX3IbE

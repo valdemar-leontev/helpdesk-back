@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+
+  database-server:
+    container_name: helpdesk-database-remote
+    image: postgres:latest
+    ports:
+      - "25432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: helpdesk
+      POSTGRES_PASSWORD: 4app1ne$$
+    networks:
+      - helpdesk-network-remote
+
+  web-api:
+    container_name: helpdesk-web-api-remote
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: helpdesk-web-api-image
+    volumes:
+      - helpdesk-volume:/app/wwwroot/files
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "database-server"
+    environment:
+      DB_CONNECTION_STRING: "Server=database-server;Port=5432;Database=helpdesk;User Id=helpdesk;Password=4app1ne$$"
+    networks:
+      - helpdesk-network-remote
+    restart: on-failure
+
+  web:
+    container_name: helpdesk-web-remote
+    build:
+      context: ../helpdesk_front
+      dockerfile: Dockerfile
+    image: helpdesk-web-image
+    ports:
+      - "8080:80"
+    depends_on:
+      - "web-api"
+
+networks:
+  helpdesk-network-remote:
+    driver: bridge
+
+volumes:
+  helpdesk-volume:
+    external: false

@@ -1,0 +1,1 @@
+GET http://localhost:5000/registrations/invite?name=Valdemar&email=valdemar.leontev@yandex.com&password=ejohgew&confirmedPassword=ejohgew

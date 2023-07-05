@@ -1,0 +1,1 @@
+update business.profile set first_name = last_name, last_name = first_name where null is null

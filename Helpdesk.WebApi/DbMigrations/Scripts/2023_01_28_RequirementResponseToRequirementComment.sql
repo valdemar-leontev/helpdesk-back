@@ -1,0 +1,34 @@
+
+-- requirement_comment
+
+alter table business.requirement_response
+    rename to requirement_comment;
+
+alter table business.requirement_comment
+    rename constraint requirement_response_pkey to requirement_comment_pkey;
+
+alter table business.requirement_comment
+    rename constraint fk_requirement_response_notification_notification_id to fk_requirement_comment_notification_notification_id;
+
+alter table business.requirement_comment
+    rename constraint fk_requirement_response_profile_profile_id to fk_requirement_comment_profile_profile_id;
+
+alter table business.requirement_comment
+    rename constraint fk_requirement_response_requirement_requirement_id to fk_requirement_comment_requirement_requirement_id;
+
+-- requirement_stage_link_requirement_comment
+
+alter table business.requirement_stage_link_requirement_response
+    rename to requirement_stage_link_requirement_comment;
+
+alter table business.requirement_stage_link_requirement_comment
+    rename column requirement_response_id TO requirement_comment_id;
+
+alter table business.requirement_stage_link_requirement_comment
+    rename constraint fk_requirement_stage_link_requirement_response_requirement_res to fk_requirement_stage_link_requirement_comment_requirement_res;
+
+alter table business.requirement_stage_link_requirement_comment
+    rename constraint fk_requirement_stage_link_requirement_response_requirement_sta to fk_requirement_stage_link_requirement_comment_requirement_sta;
+
+alter table business.requirement_stage_link_requirement_comment
+    rename constraint requirement_stage_link_requirement_response_pkey to requirement_stage_link_requirement_comment_pkey;

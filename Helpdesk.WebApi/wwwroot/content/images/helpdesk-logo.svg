@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 235 35" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: #ffffff
+        }
+
+        .st1 {
+            stroke: #ffffff
+        }
+    </style>
+    <g transform="translate(0 -12) scale(2.5)">
+        <path class="st0"
+            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V7h2v2zm8 8h-7v-2h7v2zm0-4h-7v-2h7v2zm0-4h-7V7h7v2z" />
+        <path style="fill: transparent;" d="M0 0h24v24H0z" />
+    </g>
+    <g transform="translate(65 25)">
+        <text class="st0 st1" font-family="sans-serif" font-size="30" letter-spacing="1">HELPDESK</text>
+    </g>
+    <g transform="translate(65 0)">
+        <line class="st1" x1="0" y1="35" x2="180" y2="35" stroke-width="2" />\\
+    </g>
+</svg>

@@ -1,0 +1,136 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "app-build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Helpdesk.WebApi/Helpdesk.WebApi.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "app-publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/Helpdesk.WebApi/Helpdesk.WebApi.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "app-watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/Helpdesk.WebApi/Helpdesk.WebApi.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "docker-compose-build",
+      "command": "docker-compose",
+      "type": "shell",
+      "args": [
+        "-f",
+        "${workspaceFolder}/docker-compose.yml",
+        "-p",
+        "helpdesk",
+        "build"
+      ]
+    },
+    {
+      "label": "docker-compose-run",
+      "command": "docker-compose",
+      "type": "shell",
+      "args": [
+        "-f",
+        "${workspaceFolder}/docker-compose.yml",
+        "-p",
+        "helpdesk",
+        "up",
+        "-d",
+        "--build"
+      ]
+    },
+    {
+      "label": "docker-compose-run-remote",
+      "command": "docker-compose",
+      "type": "shell",
+      "args": [
+        "-f",
+        "${workspaceFolder}/docker-compose.product.yml",
+        "-p",
+        "helpdesk-remote",
+        "up"
+      ]
+    },
+    {
+      "label": "docker-start-web-api",
+      "command": "explorer",
+      "windows": {
+        "command": "explorer.exe"
+      },
+      "args": [
+        "http://localhost:7004/docs/api/index.html"
+      ]
+    },
+    {
+      "label": "docker-start-web",
+      "command": "explorer",
+      "windows": {
+        "command": "explorer.exe"
+      },
+      "args": [
+        "http://localhost:5004/"
+      ]
+    },
+    {
+      "label": "ef-database-drop",
+      "command": "dotnet",
+      "type": "process",
+      "options": {
+        "cwd": "${workspaceFolder}/Helpdesk.WebApi"
+      },
+      "args": [
+        "ef",
+        "database",
+        "drop"
+      ]
+    },
+    {
+      "label": "ef-migration",
+      "command": "dotnet",
+      "type": "process",
+      "options": {
+        "cwd": "${workspaceFolder}/Helpdesk.WebApi"
+      },
+      "args": [
+        "ef",
+        "migrations",
+        "add",
+        "Initial_Migration",
+        "--output-dir",
+        "DbMigrations"
+      ]
+    },
+    {
+      "label": "ef-clean-dir",
+      "command": "del",
+      "type": "shell",
+      "args": [
+        "${workspaceFolder}/Helpdesk.WebApi/DbMigrations/*.*"
+      ]
+    }
+  ]
+}

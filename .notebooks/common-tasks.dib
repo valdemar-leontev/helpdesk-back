@@ -1,0 +1,192 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":["c#","cs"],"languageName":"C#","name":"csharp"},{"aliases":["f#","fs"],"languageName":"F#","name":"fsharp"},{"aliases":[],"languageName":"HTML","name":"html"},{"aliases":[],"languageName":"http","name":"httpRequest"},{"aliases":["js"],"languageName":"JavaScript","name":"javascript"},{"aliases":[],"languageName":"KQL","name":"kql"},{"aliases":[],"languageName":"Mermaid","name":"mermaid"},{"aliases":["powershell"],"languageName":"PowerShell","name":"pwsh"},{"aliases":[],"languageName":"SQL","name":"sql"},{"aliases":[],"name":"value"},{"aliases":["frontend"],"name":"vscode"}]}}
+
+#!markdown
+
+Password hash generator
+
+#!javascript
+
+const myString = "I get it, dude.";
+
+let word = "";
+
+for (const letter of myString) {
+  if (letter === "." || letter === ",") {
+    continue;
+  }  
+
+  word = `${word}${letter}`;
+
+  if (letter === " " || letter === ".") {
+    console.log(word);
+    word = "";
+  }
+}
+
+console.log(word);
+
+#!csharp
+
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Helpdesk
+
+using Helpdesk.WebApi.Helpers;
+using Helpdesk.WebApi.Services;
+
+var passwordGenerator = new StrongPasswordGenerator(8);
+var password = passwordGenerator.Next(onlySymbols: true);
+
+Console.WriteLine("{0} -> {1}", password, await DataProtectionService.GetHashStringAsync(password));
+Console.WriteLine("{0} -> {1}", "12345", await DataProtectionService.GetHashStringAsync("12345"));
+
+#!markdown
+
+Email sender tester
+
+#!csharp
+
+#r "nuget: MailKit, 3.4.2"
+#r "nuget: MimeKit, 3.4.2"
+
+using MimeKit;
+using System.Security.Authentication;
+using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+
+
+
+// SendInBlue
+var emailConfig = new {
+    Address = "helpdesk.XXXXXXXXXX@yandex.ru",
+    Host = "smtp-relay.sendinblue.com",
+    Port = 587 ,
+    UserName = "valdemar.leontev@gmail.com",
+    Password = "XXXXXXXXXX",
+    UseSsl = false
+};
+
+var appConfig = new {
+  AppTitle = "Helpdesk"
+};
+
+var mimeMessage = new MimeMessage();
+mimeMessage.From.Add(new MailboxAddress(appConfig.AppTitle, emailConfig.Address));
+mimeMessage.To.Add(new MailboxAddress("name", "valdemar.leontev@yandex.ru"));
+mimeMessage.Subject = "Message title";
+mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+{
+    Text = "Тест отправки сообщения через SMTP server MailJet."
+};
+
+using (var smtpClient = new SmtpClient())
+{
+    smtpClient.ServerCertificateValidationCallback = (s, c, h, e) => true;
+    smtpClient.CheckCertificateRevocation = false;
+    smtpClient.SslProtocols = SslProtocols.Ssl2 | SslProtocols.Ssl3 | SslProtocols.Tls | SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls13;
+
+    await smtpClient.ConnectAsync(emailConfig.Host, emailConfig.Port, emailConfig.UseSsl);
+    await smtpClient.AuthenticateAsync(emailConfig.UserName, emailConfig.Password);
+    var a = await smtpClient.SendAsync(mimeMessage);
+    await smtpClient.DisconnectAsync(true);
+}
+
+#!markdown
+
+Test DescriptionAttribute for enums
+
+#!csharp
+
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Helpdesk.WebApi.dll"
+
+using Helpdesk.Domain.Models.Dictionaries.Enums;
+using System.ComponentModel;
+using System.Reflection;
+
+var state = RequirementStates.InExecution;
+
+var descriptionAttr = typeof(RequirementStates).GetField(state.ToString()).GetCustomAttribute<DescriptionAttribute>();
+
+Console.WriteLine(descriptionAttr != null 
+    ? descriptionAttr.Description 
+    : state.ToString());
+
+Console.WriteLine(state.ToString());
+
+#!csharp
+
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Helpdesk.WebApi.dll"
+#r "..\Helpdesk.Domain\bin\Debug\net7.0\Helpdesk.Domain.dll"
+
+using Helpdesk.WebApi.Helpers;
+using Helpdesk.Domain.Models.Dictionaries.Enums;
+
+var state = RequirementStates.Agreed;
+Console.Write(state.GetDescription());
+
+#!csharp
+
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Helpdesk.WebApi.dll"
+
+using Helpdesk.WebApi.Services;
+
+var guid = Guid.NewGuid().ToString("N");
+
+Console.WriteLine("{0} - {1}", guid, guid.Length);
+Console.WriteLine(DataProtectionService.GetHashString("Инструкция для пользования Helpdesk.pdf"));
+
+#!csharp
+
+var guid = Guid.NewGuid().ToString("N");
+
+Console.WriteLine(guid);
+
+#!csharp
+
+var filesRootPath = @"..\Helpdesk.WebApi\wwwroot\files";
+var uid = "8f5075527a2c46758af8201c95124715";
+
+var files = System.IO.Directory.GetFiles(filesRootPath, $"*.*.{uid}");
+var fileFullName = files.First().Replace($".{uid}", string.Empty);
+var fileName = System.IO.Path.GetFileName(fileFullName);
+
+Console.WriteLine(fileName);
+
+#!csharp
+
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Helpdesk.WebApi.dll"
+#r "..\Helpdesk.Domain\bin\Debug\net7.0\Helpdesk.Domain.dll"
+#r "..\Helpdesk.DataAccess\bin\Debug\net7.0\Helpdesk.DataAccess.dll"
+#r "..\Helpdesk.WebApi\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll"
+
+using Helpdesk.DataAccess;
+using Helpdesk.Domain;
+using System.Linq.Dynamic.Core;
+using System.Reflection;
+using Helpdesk.WebApi.Config;
+using Helpdesk.WebApi.Middlewares;
+using Helpdesk.WebApi.Services;
+using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+
+using Helpdesk.Domain.Models.Business;
+using Helpdesk.DataAccess.Extensions;
+
+var optionsBuilder = new DbContextOptionsBuilder<AppDatabaseContext>();
+optionsBuilder
+  .UseNpgsql("Server=127.0.0.1;Port=5432;Database=helpdesk;User Id=postgres;Password=XXXXXXXXXX;")
+  .UseSnakeCaseNamingConvention();
+
+using(var appDatabaseContext = new AppDatabaseContext(optionsBuilder.Options))
+{
+  var entityType = appDatabaseContext.Model.FindModelClrEntityType("Notification");
+
+  var n = dataContext.Set(entityType)
+    .WhereInterpolated($"RecipientUserId == 2")
+    .Count();
+
+  Console.WriteLine(n);
+}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.WebApi", "Helpdesk.WebApi\Helpdesk.WebApi.csproj", "{86D9F051-042F-4232-85D8-831F6E7A8940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.DataAccess", "Helpdesk.DataAccess\Helpdesk.DataAccess.csproj", "{F1CE3FB9-F8AC-4B14-A483-1A9012119EA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Domain", "Helpdesk.Domain\Helpdesk.Domain.csproj", "{615012BC-3DE2-454C-A0D9-009D92DC9E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Tests", "Helpdesk.Tests\Helpdesk.Tests.csproj", "{F7A964A6-4C82-409D-A6DB-FE2CC1634C2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86D9F051-042F-4232-85D8-831F6E7A8940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D9F051-042F-4232-85D8-831F6E7A8940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D9F051-042F-4232-85D8-831F6E7A8940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D9F051-042F-4232-85D8-831F6E7A8940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CE3FB9-F8AC-4B14-A483-1A9012119EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CE3FB9-F8AC-4B14-A483-1A9012119EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CE3FB9-F8AC-4B14-A483-1A9012119EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CE3FB9-F8AC-4B14-A483-1A9012119EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{615012BC-3DE2-454C-A0D9-009D92DC9E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615012BC-3DE2-454C-A0D9-009D92DC9E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615012BC-3DE2-454C-A0D9-009D92DC9E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615012BC-3DE2-454C-A0D9-009D92DC9E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A964A6-4C82-409D-A6DB-FE2CC1634C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A964A6-4C82-409D-A6DB-FE2CC1634C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal

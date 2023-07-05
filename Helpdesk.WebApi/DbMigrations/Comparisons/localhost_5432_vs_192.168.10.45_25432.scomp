@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), compare document file -->
+<!-- Modifying this generated file will probably render it invalid -->
+<CompareDocument>
+  <Properties>
+    <DatabaseProvider>77a9b459-6f15-4675-8e18-cdd88f58e376</DatabaseProvider>
+    <ProviderVersion>7.2.553.0</ProviderVersion>
+    <SchemaVersion>1.6</SchemaVersion>
+  </Properties>
+  <Source Type="Database">
+    <ConnectionModel>
+      <PropertyValue Name="Database">77a9b459-6f15-4675-8e18-cdd88f58e376</PropertyValue>
+      <PropertyValue Name="ConnectionString" xml:space="preserve">User Id=postgres;Host=localhost;Port=5432;Database=helpdesk;Unicode=True;Connection Timeout=15;Default Command Timeout=30;Integrated Security=False</PropertyValue>
+      <PropertyValue Name="ExecutionTimeout">0</PropertyValue>
+    </ConnectionModel>
+    <Schema>helpdesk</Schema>
+  </Source>
+  <Target Type="Database">
+    <ConnectionModel>
+      <PropertyValue Name="Database">77a9b459-6f15-4675-8e18-cdd88f58e376</PropertyValue>
+      <PropertyValue Name="ConnectionString" xml:space="preserve">User Id=postgres;Host=192.168.10.45;Port=25432;Database=helpdesk;Unicode=True;Connection Timeout=15;Default Command Timeout=0;Integrated Security=False</PropertyValue>
+      <PropertyValue Name="ExecutionTimeout">0</PropertyValue>
+    </ConnectionModel>
+    <Schema>helpdesk</Schema>
+  </Target>
+  <GroupType Value="Status" />
+  <ComparisonOptions>
+    <ForceColumnOrder>true</ForceColumnOrder>
+    <IgnoreForeignKeys>false</IgnoreForeignKeys>
+    <IgnoreColumnOrderInIndexes>false</IgnoreColumnOrderInIndexes>
+    <QuoteObjectNames>false</QuoteObjectNames>
+    <AppendTimestamp>true</AppendTimestamp>
+    <CountColumnsToDropUK>true</CountColumnsToDropUK>
+    <MappingIgnoreSpaces>false</MappingIgnoreSpaces>
+    <MappingIgnoreCase>false</MappingIgnoreCase>
+    <MappingSimilar>false</MappingSimilar>
+    <MappingSimilarPercent xml:space="preserve">80</MappingSimilarPercent>
+    <IgnoreConstraintsNames>false</IgnoreConstraintsNames>
+    <IgnoreParserErrors>false</IgnoreParserErrors>
+    <IgnoreCase>false</IgnoreCase>
+    <IgnoreComments>false</IgnoreComments>
+    <IgnoreWhiteSpace>true</IgnoreWhiteSpace>
+    <IgnoreObjectNamesInDefinitions>false</IgnoreObjectNamesInDefinitions>
+    <DisableDependencyAnalysis>false</DisableDependencyAnalysis>
+    <IgnoreDataTypesInColumn>false</IgnoreDataTypesInColumn>
+    <IgnoreColumnDefaultValues>false</IgnoreColumnDefaultValues>
+    <IgnorePartitions>false</IgnorePartitions>
+    <IgnoreTablespaces>false</IgnoreTablespaces>
+    <IgnoreCollations>false</IgnoreCollations>
+    <IgnoreRules>false</IgnoreRules>
+    <IgnorePolicies>false</IgnorePolicies>
+    <IgnoreDatabaseObjectOwners>true</IgnoreDatabaseObjectOwners>
+    <CheckInconsistency>false</CheckInconsistency>
+    <SetDelimiter>true</SetDelimiter>
+    <UseDelimiter>true</UseDelimiter>
+    <TargetDatabaseName xml:space="preserve">helpdesk</TargetDatabaseName>
+    <TargetChangeTracking>false</TargetChangeTracking>
+    <IsTarget>false</IsTarget>
+    <OmitIgnoreOptions>false</OmitIgnoreOptions>
+    <IncludeFilesAndFilegroups>false</IncludeFilesAndFilegroups>
+    <IgnoreMemoryOptimizedProperty>false</IgnoreMemoryOptimizedProperty>
+    <IncludeSetNoExec>true</IncludeSetNoExec>
+    <CompareServerObjects>false</CompareServerObjects>
+    <IgnoreObjectTypeFilter>false</IgnoreObjectTypeFilter>
+  </ComparisonOptions>
+  <ObjectFilter>
+    <FiltersCollection FormatVersion="1.0">
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="All object types" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Function" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="MaterializedView" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Procedure" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Schema" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Sequence" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Table" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="TableValuedFunction" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="Trigger" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="UserType" />
+      <FilterViewModel Checked="True" Filter="" Include="True" ObjectName="View" />
+    </FiltersCollection>
+    <ObjectFilterName Name="Custom*" />
+    <ObjectFilterModified Modified="False" />
+  </ObjectFilter>
+  <ModifiedObjects />
+  <SynchronizationOptions>
+    <PropertyValue Name="UseSchemaNamePrefix">false</PropertyValue>
+    <PropertyValue Name="ExcludeComments">false</PropertyValue>
+    <PropertyValue Name="AffectedFileReadOnly">true</PropertyValue>
+    <PropertyValue Name="IncludePrintComments">false</PropertyValue>
+    <PropertyValue Name="CreateBackupFolder">true</PropertyValue>
+    <PropertyValue Name="BackupPathName" xml:space="preserve" />
+    <PropertyValue Name="BackupExtension">false</PropertyValue>
+    <PropertyValue Name="BackupExtensionName" xml:space="preserve">.bak</PropertyValue>
+    <PropertyValue Name="ExecuteAsSingleTransaction">true</PropertyValue>
+    <PropertyValue Name="GenerateScriptHeader">true</PropertyValue>
+    <PropertyValue Name="UseCommitMode">false</PropertyValue>
+    <PropertyValue Name="UseSqlExtensionCommands">true</PropertyValue>
+    <PropertyValue Name="AllowDefaultValues">false</PropertyValue>
+    <PropertyValue Name="ExecuteCustomScriptTypeBefore">0</PropertyValue>
+    <PropertyValue Name="EmbeddedScriptBefore" xml:space="preserve" />
+    <PropertyValue Name="ExternalScriptBefore" xml:space="preserve" />
+    <PropertyValue Name="ExecuteCustomScriptTypeAfter">0</PropertyValue>
+    <PropertyValue Name="IncludeStatementUSEBefore">false</PropertyValue>
+    <PropertyValue Name="EmbeddedScriptAfter" xml:space="preserve" />
+    <PropertyValue Name="ExternalScriptAfter" xml:space="preserve" />
+    <PropertyValue Name="IncludeStatementUSEAfter">false</PropertyValue>
+    <PropertyValue Name="UseSubSchemaNamePrefix">true</PropertyValue>
+    <PropertyValue Name="ExcludeDependencies">false</PropertyValue>
+    <PropertyValue Name="CanSqlExecutorAddError">true</PropertyValue>
+    <PropertyValue Name="SynchronizeType">0</PropertyValue>
+    <PropertyValue Name="SynchronizationFileName" xml:space="preserve">C:\Users\valde\Documents\Devart\dbForge Schema Compare for PostgreSQL\helpdesk (localhost_5432 vs 192.168.10.45_25432).sql</PropertyValue>
+    <PropertyValue Name="SynchronizationEditorFileName" xml:space="preserve" />
+    <PropertyValue Name="OpenScriptInEditor">false</PropertyValue>
+    <PropertyValue Name="RefreshAfterSynchronization">true</PropertyValue>
+    <PropertyValue Name="OpenScriptsFolder">false</PropertyValue>
+    <PropertyValue Name="RemoveControlChars">false</PropertyValue>
+    <PropertyValue Name="PureScript">false</PropertyValue>
+    <PropertyValue Name="IsPartOfScript">false</PropertyValue>
+    <PropertyValue Name="IgnoreEncryptionProperty">false</PropertyValue>
+    <PropertyValue Name="CommitPageLength" xml:space="preserve">100</PropertyValue>
+  </SynchronizationOptions>
+  <Mapping ExcludeUnmappedSchemas="False">
+    <Schemas />
+    <ComparedObjects />
+  </Mapping>
+</CompareDocument>

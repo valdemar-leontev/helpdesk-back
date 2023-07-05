@@ -1,0 +1,2 @@
+GET http://localhost:5000/integrations/active-directory-list
+X-Api-Key: dyndQKkWl7flUfBWpgHHnJLKAanyzPKL+z6HGQf44Mc=
